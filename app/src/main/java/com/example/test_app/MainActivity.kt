@@ -12,15 +12,41 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
 //            ExampleScreen()
-            SearchLists()
+//            SearchLists()
+
+            Log.d("MainActivity", "Start - Main")
+
+            LaunchedEffect(key1 = true) {
+                printAllNames()
+                Log.d("MainActivity", "End - Scope")
+            }
+
+            Log.d("MainActivity", "End - Main")
         }
+
+        //  GlobalScope.launch
+        lifecycleScope.launch {
+            Log.d("Inside Global Scope", Thread.currentThread().name.toString())
+        }
+        Log.d("Outside Global Scope", Thread.currentThread().name.toString())
     }
+}
+
+private suspend fun printAllNames() {
+    delay(2000)
 }
 
 
