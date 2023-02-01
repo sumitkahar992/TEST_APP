@@ -13,11 +13,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +27,9 @@ class MainActivity : ComponentActivity() {
         setContent {
 
 //            ExampleScreen()
-//            SearchLists()
+            SearchLists()
 
-            Log.d("MainActivity", "Start - Main")
+        /*    Log.d("MainActivity", "Start - Main")
 
             LaunchedEffect(key1 = true) {
                 printAllNames()
@@ -35,6 +37,8 @@ class MainActivity : ComponentActivity() {
             }
 
             Log.d("MainActivity", "End - Main")
+
+            */
         }
 
         //  GlobalScope.launch
