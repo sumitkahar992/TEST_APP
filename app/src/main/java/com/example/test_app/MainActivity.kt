@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
+import com.example.test_app.dictionary.DictionaryScreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -27,7 +28,8 @@ class MainActivity : ComponentActivity() {
         setContent {
 
 //            ExampleScreen()
-            SearchLists()
+//            SearchLists()
+            DictionaryScreen()
 
         /*    Log.d("MainActivity", "Start - Main")
 
