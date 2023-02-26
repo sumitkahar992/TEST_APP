@@ -16,7 +16,6 @@ import androidx.lifecycle.lifecycleScope
 import com.example.test_app.dictionary.DictionaryScreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -27,20 +26,27 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
+            /*    Counter()
+                coroutineTasks()
+                launchAsync()
+
+                */
+
+
 //            ExampleScreen()
 //            SearchLists()
             DictionaryScreen()
 
-        /*    Log.d("MainActivity", "Start - Main")
+            /*    Log.d("MainActivity", "Start - Main")
 
-            LaunchedEffect(key1 = true) {
-                printAllNames()
-                Log.d("MainActivity", "End - Scope")
-            }
+                LaunchedEffect(key1 = true) {
+                    printAllNames()
+                    Log.d("MainActivity", "End - Scope")
+                }
 
-            Log.d("MainActivity", "End - Main")
+                Log.d("MainActivity", "End - Main")
 
-            */
+                */
         }
 
         //  GlobalScope.launch
